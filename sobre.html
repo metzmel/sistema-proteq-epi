@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteq EPI - Sobre o Projeto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="bi bi-shield-check"></i>
+            <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
+            <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
+            <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
+            <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
+            <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
+            <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
+            <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
+            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#"><i class="bi bi-power"></i> Encerrar Sessão</a>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-header">
+            <h2 class="header-title"><i class="bi bi-info-circle me-2"></i> SOBRE O PROJETO</h2>
+            <div class="header-actions">
+                <button class="icon-btn" onclick="window.location.href='sobre.html'" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));"><i class="bi bi-question-circle-fill"></i></button>
+                <button class="icon-btn">
+                    <i class="bi bi-chat-dots"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+                <button class="icon-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+
+                <div class="user-profile">
+                    <div class="user-info text-end">
+                        <span class="user-name">Hillary Capinan</span>
+                        <span class="user-role">ADMINISTRADORA</span>
+                    </div>
+                    <div class="avatar-circle">HC</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            
+            <div class="glass-card mb-4" style="border-left: 5px solid var(--primary-magenta);">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h3 class="fw-bold mb-3" style="color: var(--text-light); text-transform: uppercase; letter-spacing: 2px;">Sistema de Gerenciamento Proteq EPI</h3>
+                        <p class="mb-1"><strong style="color: var(--primary-magenta);">DESENVOLVEDORA:</strong> HILLARY SANTOS CAPINAN</p>
+                        <p class="mb-1"><strong style="color: var(--primary-magenta);">CURSO:</strong> Desenvolvimento de Sistemas</p>
+                        <p class="mb-0"><strong style="color: var(--primary-magenta);">DISCIPLINA:</strong> Desenvolvimento de Sistemas</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <i class="bi bi-file-earmark-code" style="font-size: 6rem; color: rgba(224, 30, 134, 0.2);"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="mb-4" style="color: var(--primary-magenta); font-weight: 800;"><i class="bi bi-check2-all me-2"></i>REQUISITOS ATENDIDOS (ESCOPO)</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Tela Base:</strong> Dashboard e Menu Lateral em todas as páginas com identificação do usuário.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Módulo de Colaboradores:</strong> Telas de cadastro e listagem integradas ao Banco de Dados.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Módulo de Equipamentos:</strong> Cadastro, listagem e controle de estoque de EPIs.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Controle de Empréstimos:</strong> Validação rigorosa de datas, proteção de dados e lógicas de status (Fornecido, Devolvido, etc).</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Filtro Avançado (AND):</strong> Tela de relatórios cruzando parâmetros de Colaborador, Equipamento e Status.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                <div><strong>Persistência:</strong> Servidor backend estruturado em Node.js com banco MySQL relacional.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="glass-card h-100">
+                        <h5 class="mb-4" style="color: var(--accent-purple); font-weight: 800;"><i class="bi bi-stars me-2"></i>EXTRAS E DIFERENCIAIS IMPLEMENTADOS</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
+                                <div><strong>UI/UX Premium:</strong> Interface baseada em Glassmorphism, garantindo design limpo, moderno e profissional.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
+                                <div><strong>Tematização Dinâmica:</strong> O sistema muda automaticamente a paleta de cores (Rosa, Azul, Laranja, Verde) para ajudar na orientação visual do usuário em cada módulo.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
+                                <div><strong>Filtros em Tempo Real:</strong> As tabelas respondem letra por letra à digitação, sem necessidade de recarregar a página.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
+                                <div><strong>Edição em Modais:</strong> As atualizações de dados ocorrem em janelas sobrepostas, acelerando o fluxo de trabalho sem tirar o usuário da lista principal.</div>
+                            </li>
+                            <li class="mb-3 d-flex align-items-start">
+                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
+                                <div><strong>Tratamento de Erros:</strong> Blindagem completa no Frontend e Backend para prevenir envio de formulários incompletos ou dados incompatíveis.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="system-footer mt-5">
+                <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

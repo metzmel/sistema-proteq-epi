@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteq EPI - Base de Dados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <i class="bi bi-shield-check"></i>
+            <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
+            <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
+            <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
+            <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
+            <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
+            <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
+            <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+            <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
+            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#"><i class="bi bi-power"></i> Encerrar Sessão</a>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="top-header">
+            <h2 class="header-title"><i class="bi bi-card-list me-2"></i> BASE DE DADOS</h2>
+            
+            <div class="header-actions">
+<button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                <button class="icon-btn">
+                    <i class="bi bi-chat-dots"></i>
+                    <span class="notification-badge" style="background: var(--accent-purple);">5</span>
+                </button>
+                <button class="icon-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+
+                <div class="user-profile">
+                    <div class="user-info text-end">
+                        <span class="user-name">Hillary Capinan</span>
+                        <span class="user-role">ADMINISTRADORA</span>
+                    </div>
+                    <div class="avatar-circle">HC</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="mb-4 d-flex justify-content-between align-items-center">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;" onmouseover="this.style.color='var(--primary-magenta)'" onmouseout="this.style.color='var(--text-muted)'">
+                    <i class="bi bi-arrow-left me-2"></i>VOLTAR PARA DASHBOARD
+                </a>
+                
+                <div class="input-group" style="width: 350px; border-radius: 10px; box-shadow: 0 0 15px rgba(224, 30, 134, 0.2);">
+                    <input type="text" class="form-control" id="inputPesquisa" placeholder="Buscar por nome..." style="border-right: none; background: rgba(0,0,0,0.4); color: white;">
+                    <button class="btn" type="button" id="btnPesquisar" style="background: linear-gradient(45deg, var(--primary-magenta), var(--accent-purple)); border: none; border-radius: 0 10px 10px 0; padding: 10px 20px; color: white;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="glass-card">
+                <div class="table-responsive">
+                    <table class="table-dark-custom">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME COMPLETO</th>
+                                <th>CPF</th>
+                                <th>CARGO</th>
+                                <th>SETOR</th>
+                                <th>STATUS</th>
+                                <th>DATA</th>
+                                <th class="text-end">AÇÕES</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaColaboradores">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <footer class="system-footer">
+                <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p>
+            </footer>
+        </main>
+    </div>
+
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="background: var(--bg-glass); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.7);">
+                <div class="modal-header border-0" style="padding: 30px 40px 10px;">
+                    <h5 class="modal-title" style="color: var(--primary-magenta); font-weight: 800; letter-spacing: 1px;">
+                        <i class="bi bi-pencil-square me-2"></i> EDITAR COLABORADOR
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="padding: 10px 40px 40px;">
+                    <form id="formEditar">
+                        <input type="hidden" id="editId">
+                        <div class="row g-4">
+                            <div class="col-md-8">
+                                <label class="form-label" style="color: var(--primary-magenta);">NOME COMPLETO</label>
+                                <input type="text" class="form-control" id="editNome" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" style="color: var(--primary-magenta);">CPF</label>
+                                <input type="text" class="form-control" id="editCpf" maxlength="11" required>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label" style="color: var(--primary-magenta);">CARGO</label>
+                                <input type="text" class="form-control" id="editCargo" required>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label" style="color: var(--primary-magenta);">SETOR</label>
+                                <input type="text" class="form-control" id="editSetor" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label" style="color: var(--primary-magenta);">STATUS</label>
+                                <select class="form-select" id="editStatus" required>
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label" style="color: var(--primary-magenta);">OBSERVAÇÃO</label>
+                                <textarea class="form-control" id="editObservacao" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="text-end mt-5">
+                            <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal" style="border-radius: 50px; padding: 12px 25px; font-weight: bold;">CANCELAR</button>
+                            <button type="submit" class="btn btn-custom" style="padding: 12px 35px;">ATUALIZAR DADOS</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/colaborador.js"></script>
+</body>
+</html>
