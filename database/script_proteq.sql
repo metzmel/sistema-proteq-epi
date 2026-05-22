@@ -9,6 +9,14 @@ CREATE TABLE administrador (
     senha VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE usuario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    cargo VARCHAR(100) DEFAULT 'ADMINISTRADORA'
+);
+
 CREATE TABLE colaborador (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -41,3 +49,14 @@ CREATE TABLE emprestimo (
 
 INSERT INTO administrador (nome, email, senha) 
 VALUES ('Hillary Capinan', 'admin@proteq.com', '123456');
+
+INSERT INTO usuario (nome, email, senha, cargo) 
+VALUES ('Hillary Capinan', 'hillary@admin.com', '123456', 'ADMINISTRADORA');
+
+-- Acesso exclusivo para o Professor Gabriel
+INSERT INTO usuario (nome, email, senha, cargo) 
+VALUES ('Professor Gabriel', 'gabriel@senai.com', 'senai123', 'AVALIADOR');
+
+-- Acesso exclusivo para o Professor Yanes
+INSERT INTO usuario (nome, email, senha, cargo) 
+VALUES ('Professor Yanes', 'yanes@senai.com', 'senai123', 'AVALIADOR');

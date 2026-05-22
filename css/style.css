@@ -476,32 +476,32 @@ body.theme-relatorio .form-select:focus {
     border-color: #00ff88 !important;
 }
 /* =======================================================================
-   📱 MENU RESPONSIVO (BARRA LATERAL MINIMIZADA / OFF-CANVAS)
+    MENU RESPONSIVO (BARRA LATERAL MINIMIZADA)
    ======================================================================= */
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-100%); /* Esconde a barra jogando ela para fora da tela */
+        transform: translateX(-100%); 
         transition: transform 0.4s ease-in-out;
         box-shadow: 10px 0 20px rgba(0,0,0,0.5);
     }
     
     .sidebar.aberta {
-        transform: translateX(0); /* Classe mágica que traz a barra de volta ao clicar */
+        transform: translateX(0); 
     }
 
     .main-wrapper {
-        margin-left: 0; /* O sistema expande para ocupar a tela toda */
+        margin-left: 0; 
     }
 
     .top-header {
-        padding: 0 15px; /* Ajusta o cabeçalho para o celular */
+        padding: 0 15px; 
     }
 
     .content-area {
-        padding: 15px; /* Menos bordas nas laterais para as tabelas caberem melhor */
+        padding: 15px; /
     }
     
     .user-info {
-        display: none; /* Esconde o seu nome escrito para não espremer os ícones do topo */
+        display: none; 
     }
 }

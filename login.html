@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteq EPI - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="d-flex align-items-center justify-content-center" style="height: 100vh; overflow: hidden;">
+    <div class="glass-card" style="width: 100%; max-width: 400px; padding: 40px;">
+        <div class="text-center mb-4">
+            <i class="bi bi-shield-check" style="font-size: 3rem; color: var(--primary-magenta); filter: drop-shadow(0 0 10px var(--primary-magenta));"></i>
+            <h3 class="fw-bold mt-2">Proteq EPI</h3>
+            <p class="text-muted small">Entre com suas credenciais</p>
+        </div>
+        <form id="formLogin">
+            <div class="mb-3">
+                <label class="form-label">E-MAIL</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-4">
+                <label class="form-label">SENHA</label>
+                <input type="password" class="form-control" id="senha" required>
+            </div>
+            <button type="submit" class="btn btn-custom w-100">ENTRAR NO SISTEMA</button>
+        </form>
+    </div>
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('formLogin').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            try {
+                const response = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, senha })
+                });
+                if (response.ok) {
+                    const usuario = await response.json();
+                    localStorage.setItem('usuarioLogado', JSON.stringify(usuario));
+                    window.location.href = 'index.html';
+                } else {
+                    const erro = await response.json();
+                    alert(erro.message);
+                }
+            } catch (error) {
+                alert('Erro ao conectar com o servidor.');
+            }
+        });
+    </script>
+</body>
+</html>

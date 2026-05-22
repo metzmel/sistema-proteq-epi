@@ -18,6 +18,16 @@ db.connect(err => {
     console.log('Conexão estabelecida com sucesso no MySQL! 💜');
 });
 
+app.post('/api/login', (req, res) => {
+    const { email, senha } = req.body;
+    const sql = 'SELECT * FROM usuario WHERE email = ? AND senha = ?';
+    db.query(sql, [email, senha], (err, results) => {
+        if (err) return res.status(500).json({ error: err.message });
+        if (results.length === 0) return res.status(401).json({ message: 'E-mail ou senha incorretos!' });
+        res.json({ id: results[0].id, nome: results[0].nome, cargo: results[0].cargo });
+    });
+});
+
 app.post('/api/colaboradores', (req, res) => {
     const { nome, cpf, cargo, setor, status, observacao } = req.body;
     const sql = 'INSERT INTO colaborador (nome, cpf, cargo, setor, status, observacao) VALUES (?, ?, ?, ?, ?, ?)';
@@ -131,13 +141,12 @@ app.get('/api/emprestimos/:id', (req, res) => {
 
 app.put('/api/emprestimos/:id', (req, res) => {
     const { status, data_devolucao, observacao_devolucao } = req.body;
-    const sql = 'UPDATE emprestimo SET status=?, data_devolucao=?, observacao_devolucao=? WHERE id=?';
-    db.query(sql, [status, data_devolucao, observacao_devolucao, req.params.id], (err, result) => {
+const sql = 'UPDATE emprestimo SET status=?, data_devolucao=?, observacao=? WHERE id=?';    db.query(sql, [status, data_devolucao, observacao_devolucao, req.params.id], (err, result) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json({ message: 'Empréstimo atualizado!' });
     });
 });
 
 app.listen(3000, () => {
-    console.log('Servidor Proteq EPI rodando na porta 3000! 🚀');
+    console.log('Servidor Proteq EPI a correr na porta 3000! 🚀');
 });
