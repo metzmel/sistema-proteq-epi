@@ -15,20 +15,25 @@
             <i class="bi bi-shield-check"></i>
             <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
         </div>
+
         <ul class="sidebar-menu">
             <li><a href="index.html" class="active"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
             <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
             <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
             <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
             <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
+
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
         </div>
@@ -37,76 +42,208 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
                 <h2 class="header-title m-0"><i class="bi bi-grid-1x2 me-2"></i> VISÃO GERAL</h2>
             </div>
             
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
+                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>
+
                 <button class="icon-btn">
                     <i class="bi bi-chat-dots"></i>
                     <span class="notification-badge" style="background: var(--accent-purple);">5</span>
                 </button>
+
                 <button class="icon-btn">
                     <i class="bi bi-bell"></i>
                     <span class="notification-badge">3</span>
                 </button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
 
                 <div class="user-profile">
                     <div class="user-info text-end">
-                        <span class="user-name">Hillary Capinan</span>
-                        <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
-                    <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
-            <div class="mb-4">
-                <h4 class="fw-bold text-white" style="font-size: 1.6rem;">
-                    Bem-vindo, <span class="user-name" style="color: var(--primary-magenta); text-shadow: 0 0 10px rgba(224, 30, 134, 0.5);">Hillary</span>!
-                </h4>
-                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.95rem;">Acesse rapidamente os módulos do sistema Proteq EPI.</p>
+            <div class="mb-4 d-flex justify-content-between align-items-start flex-wrap gap-3">
+                <div>
+                    <h4 class="fw-bold text-white" style="font-size: 1.6rem;">
+                        Bem-vindo, <span class="user-name" style="color: var(--primary-magenta);">Usuário</span>!
+                    </h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Acesse rapidamente os módulos do sistema Proteq EPI.</p>
+                </div>
+
+                <button type="button" class="btn btn-outline-light" id="btnAtualizarDashboard" style="border-radius: 999px;">
+                    <i class="bi bi-arrow-clockwise me-2"></i>Atualizar
+                </button>
             </div>
 
-            <div class="row g-4 mb-5">
+            <div class="row g-4 mb-4">
                 <div class="col-md-4">
-                    <div class="glass-card text-center h-100" style="padding: 30px;">
-                        <i class="bi bi-people" style="font-size: 3rem; color: var(--primary-magenta); filter: drop-shadow(0 0 10px var(--primary-magenta));"></i>
+                    <div class="glass-card text-center h-100" onclick="window.location.href='lista_colaboradores.html'" style="padding: 30px; cursor: pointer;">
+                        <i class="bi bi-people" style="font-size: 3rem; color: var(--primary-magenta);"></i>
                         <h5 class="mt-3 fw-bold text-white">COLABORADORES</h5>
                         <p class="text-muted small mb-4">Gestão da equipe, cargos e departamentos.</p>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashColaboradoresTotal" style="display: block; color: var(--text-light); font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Total</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashColaboradoresAtivos" style="display: block; color: #2f7546; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Ativos</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashColaboradoresInativos" style="display: block; color: #97651f; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Inativos</small>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="d-grid gap-2">
-                            <a href="cadastro_colaborador.html" class="btn btn-custom btn-sm"><i class="bi bi-person-plus me-2"></i> Cadastrar Novo</a>
-                            <a href="lista_colaboradores.html" class="btn btn-outline-light btn-sm" style="border-radius: 50px;"><i class="bi bi-card-list me-2"></i> Base de Dados</a>
+                            <a href="cadastro_colaborador.html" onclick="event.stopPropagation()" class="btn btn-custom btn-sm">
+                                <i class="bi bi-person-plus me-2"></i> Cadastrar Novo
+                            </a>
+                            <a href="lista_colaboradores.html" onclick="event.stopPropagation()" class="btn btn-outline-light btn-sm" style="border-radius: 50px;">
+                                <i class="bi bi-card-list me-2"></i> Base de Dados
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="glass-card text-center h-100" style="padding: 30px;">
-                        <i class="bi bi-tools" style="font-size: 3rem; color: #00ff88; filter: drop-shadow(0 0 10px #00ff88);"></i>
+                    <div class="glass-card text-center h-100" onclick="window.location.href='lista_equipamentos.html'" style="padding: 30px; cursor: pointer;">
+                        <i class="bi bi-tools" style="font-size: 3rem; color: var(--primary-magenta);"></i>
                         <h5 class="mt-3 fw-bold text-white">EQUIPAMENTOS</h5>
                         <p class="text-muted small mb-4">Controle de estoque, status e manutenção.</p>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEquipamentosTotal" style="display: block; color: var(--text-light); font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Total</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEquipamentosDisponiveis" style="display: block; color: #2f7546; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Disp.</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEquipamentosManutencao" style="display: block; color: #97651f; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Manut.</small>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="d-grid gap-2">
-                            <a href="cadastro_equipamento.html" class="btn btn-custom btn-sm" style="background: linear-gradient(45deg, #00cc6a, #00ff88); color: #000;"><i class="bi bi-plus-circle me-2"></i> Novo Item</a>
-                            <a href="lista_equipamentos.html" class="btn btn-outline-light btn-sm" style="border-radius: 50px;"><i class="bi bi-box-seam me-2"></i> Inventário</a>
+                            <a href="cadastro_equipamento.html" onclick="event.stopPropagation()" class="btn btn-custom btn-sm">
+                                <i class="bi bi-plus-circle me-2"></i> Novo Item
+                            </a>
+                            <a href="lista_equipamentos.html" onclick="event.stopPropagation()" class="btn btn-outline-light btn-sm" style="border-radius: 50px;">
+                                <i class="bi bi-box-seam me-2"></i> Inventário
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-4">
-                    <div class="glass-card text-center h-100" style="padding: 30px;">
-                        <i class="bi bi-arrow-left-right" style="font-size: 3rem; color: #ffaa00; filter: drop-shadow(0 0 10px #ffaa00);"></i>
+                    <div class="glass-card text-center h-100" onclick="window.location.href='relatorio_emprestimos.html'" style="padding: 30px; cursor: pointer;">
+                        <i class="bi bi-arrow-left-right" style="font-size: 3rem; color: var(--primary-magenta);"></i>
                         <h5 class="mt-3 fw-bold text-white">MOVIMENTAÇÕES</h5>
                         <p class="text-muted small mb-4">Controle de saídas, devoluções e históricos.</p>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEmprestimosAbertos" style="display: block; color: var(--text-light); font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Aberto</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEmprestimosDevolvidos" style="display: block; color: #2f7546; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Dev.</small>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 14px; padding: 10px;">
+                                    <strong id="dashEmprestimosAtrasados" style="display: block; color: #a43838; font-size: 1.2rem; line-height: 1;">0</strong>
+                                    <small style="display: block; color: var(--text-muted); font-weight: 700; margin-top: 4px;">Atraso</small>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="d-grid gap-2">
-                            <a href="controle_epi.html" class="btn btn-custom btn-sm" style="background: linear-gradient(45deg, #ff6600, #ffaa00);"><i class="bi bi-box-arrow-up-right me-2"></i> Controle EPI</a>
-                            <a href="relatorio_emprestimos.html" class="btn btn-outline-light btn-sm" style="border-radius: 50px;"><i class="bi bi-journal-text me-2"></i> Relatórios</a>
+                            <a href="controle_epi.html" onclick="event.stopPropagation()" class="btn btn-custom btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-2"></i> Controle EPI
+                            </a>
+                            <a href="relatorio_emprestimos.html" onclick="event.stopPropagation()" class="btn btn-outline-light btn-sm" style="border-radius: 50px;">
+                                <i class="bi bi-journal-text me-2"></i> Relatórios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-xl-8">
+                    <div class="glass-card h-100" style="padding: 24px;">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-3">
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Histórico recente</span>
+                                <h5 style="font-weight: 900; margin: 5px 0 0;">Últimas movimentações</h5>
+                            </div>
+
+                            <a href="relatorio_emprestimos.html" class="btn btn-outline-light btn-sm" style="border-radius: 999px;">
+                                Ver relatório
+                            </a>
+                        </div>
+
+                        <div id="dashHistoricoRecente" style="display: grid; gap: 10px;">
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <span style="color: var(--text-muted); font-weight: 700;">Carregando histórico...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4">
+                    <div class="glass-card h-100" style="padding: 20px 24px;">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Resumo rápido</span>
+                                <strong id="dashResumoTexto" style="display: block; color: var(--text-light); font-size: 0.98rem; margin-top: 4px;">Carregando dados do sistema...</strong>
+                            </div>
+                        </div>
+
+                        <div id="dashStatusConexao" style="display: inline-flex; align-items: center; gap: 8px; background: var(--rosa-suave, #fff4f8); color: var(--rosa-escuro, #6f2b42); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 999px; padding: 8px 13px; font-size: 0.78rem; font-weight: 900;">
+                            <i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i>
+                            Verificando
                         </div>
                     </div>
                 </div>
@@ -119,21 +256,275 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        const API_URL = 'http://localhost:3000/api';
+
         const btnMenu = document.getElementById('btnMenuMobile');
         const sidebar = document.querySelector('.sidebar');
-        if(btnMenu && sidebar) {
+
+        if (btnMenu && sidebar) {
             btnMenu.addEventListener('click', (e) => {
                 sidebar.classList.toggle('aberta');
                 e.stopPropagation();
             });
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
                     sidebar.classList.remove('aberta');
                 }
             });
         }
+
+        function preencherTexto(id, valor) {
+            const elemento = document.getElementById(id);
+
+            if (elemento) {
+                elemento.textContent = valor;
+            }
+        }
+
+        function criarData(data) {
+            if (!data) {
+                return null;
+            }
+
+            const dataLimpa = String(data).split('T')[0];
+            const partes = dataLimpa.split('-');
+
+            if (partes.length !== 3) {
+                return null;
+            }
+
+            const ano = Number(partes[0]);
+            const mes = Number(partes[1]) - 1;
+            const dia = Number(partes[2]);
+
+            if (!ano || mes < 0 || !dia) {
+                return null;
+            }
+
+            return new Date(ano, mes, dia);
+        }
+
+        function formatarData(data) {
+            const dataCriada = criarData(data);
+
+            if (!dataCriada) {
+                return 'Sem data';
+            }
+
+            return dataCriada.toLocaleDateString('pt-BR');
+        }
+
+        function statusEmAberto(status) {
+            return status === 'Emprestado' || status === 'Fornecido';
+        }
+
+        function estaAtrasado(emprestimo) {
+            if (!statusEmAberto(emprestimo.status)) {
+                return false;
+            }
+
+            const dataPrevista = criarData(emprestimo.data_prevista);
+
+            if (!dataPrevista) {
+                return false;
+            }
+
+            const hoje = new Date();
+            hoje.setHours(0, 0, 0, 0);
+
+            return dataPrevista < hoje;
+        }
+
+        function escaparHTML(valor) {
+            return String(valor || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        async function buscarDados(rota) {
+            const resposta = await fetch(`${API_URL}${rota}`);
+
+            if (!resposta.ok) {
+                throw new Error('Erro ao carregar ' + rota);
+            }
+
+            return await resposta.json();
+        }
+
+        function atualizarStatusConexao(tipo) {
+            const status = document.getElementById('dashStatusConexao');
+
+            if (!status) {
+                return;
+            }
+
+            if (tipo === 'online') {
+                status.innerHTML = '<i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i> Online';
+                status.style.background = '#e7f5eb';
+                status.style.color = '#2f7546';
+                status.style.borderColor = '#bfe4c9';
+                return;
+            }
+
+            if (tipo === 'offline') {
+                status.innerHTML = '<i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i> Offline';
+                status.style.background = '#fde8e8';
+                status.style.color = '#a43838';
+                status.style.borderColor = '#f1b9b9';
+                return;
+            }
+
+            status.innerHTML = '<i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i> Verificando';
+        }
+
+        function classeBadgeStatus(status) {
+            if (status === 'Devolvido') {
+                return 'bg-success';
+            }
+
+            if (status === 'Danificado' || status === 'Perdido') {
+                return 'bg-danger';
+            }
+
+            if (status === 'Fornecido') {
+                return 'bg-info';
+            }
+
+            return 'bg-primary';
+        }
+
+        function textoMovimentacao(emprestimo) {
+            const equipamento = emprestimo.nome_equipamento || 'Equipamento';
+            const colaborador = emprestimo.nome_colaborador || 'Colaborador';
+            const status = emprestimo.status || 'Registro';
+
+            if (status === 'Devolvido') {
+                return `${colaborador} devolveu ${equipamento}`;
+            }
+
+            if (status === 'Danificado') {
+                return `${equipamento} foi registrado como danificado`;
+            }
+
+            if (status === 'Perdido') {
+                return `${equipamento} foi registrado como perdido`;
+            }
+
+            if (status === 'Fornecido') {
+                return `${equipamento} foi fornecido para ${colaborador}`;
+            }
+
+            return `${colaborador} retirou ${equipamento}`;
+        }
+
+        function renderizarHistorico(emprestimos) {
+            const historico = document.getElementById('dashHistoricoRecente');
+
+            if (!historico) {
+                return;
+            }
+
+            historico.innerHTML = '';
+
+            if (!emprestimos || emprestimos.length === 0) {
+                historico.innerHTML = `
+                    <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                        <span style="color: var(--text-muted); font-weight: 700;">Nenhuma movimentação registrada.</span>
+                    </div>
+                `;
+                return;
+            }
+
+            const ultimos = [...emprestimos]
+                .sort((a, b) => Number(b.id || 0) - Number(a.id || 0))
+                .slice(0, 5);
+
+            ultimos.forEach(item => {
+                const badge = classeBadgeStatus(item.status);
+                const atrasado = estaAtrasado(item);
+                const data = formatarData(item.data_saida);
+
+                historico.innerHTML += `
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                        <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+                            <div style="width: 38px; height: 38px; border-radius: 13px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; flex-shrink: 0;">
+                                <i class="bi bi-arrow-left-right"></i>
+                            </div>
+                            <div style="min-width: 0;">
+                                <strong style="display: block; color: var(--text-light); font-size: 0.92rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${escaparHTML(textoMovimentacao(item))}</strong>
+                                <small style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 2px;">${escaparHTML(data)} • Registro #${escaparHTML(item.id)}</small>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+                            ${atrasado ? '<span class="badge bg-danger p-2">Atrasado</span>' : ''}
+                            <span class="badge ${badge} p-2">${escaparHTML(item.status || '---')}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        async function carregarDashboard() {
+            atualizarStatusConexao('verificando');
+            preencherTexto('dashResumoTexto', 'Carregando dados do sistema...');
+
+            try {
+                const [colaboradores, equipamentos, emprestimos] = await Promise.all([
+                    buscarDados('/colaboradores'),
+                    buscarDados('/equipamentos'),
+                    buscarDados('/emprestimos')
+                ]);
+
+                const colaboradoresAtivos = colaboradores.filter(item => item.status === 'Ativo').length;
+                const colaboradoresInativos = colaboradores.filter(item => item.status === 'Inativo').length;
+
+                const equipamentosDisponiveis = equipamentos.filter(item => item.status === 'Disponível').length;
+                const equipamentosManutencao = equipamentos.filter(item => item.status === 'Em Manutenção').length;
+
+                const emprestimosAbertos = emprestimos.filter(item => statusEmAberto(item.status)).length;
+                const emprestimosDevolvidos = emprestimos.filter(item => item.status === 'Devolvido').length;
+                const emprestimosAtrasados = emprestimos.filter(item => estaAtrasado(item)).length;
+
+                preencherTexto('dashColaboradoresTotal', colaboradores.length);
+                preencherTexto('dashColaboradoresAtivos', colaboradoresAtivos);
+                preencherTexto('dashColaboradoresInativos', colaboradoresInativos);
+
+                preencherTexto('dashEquipamentosTotal', equipamentos.length);
+                preencherTexto('dashEquipamentosDisponiveis', equipamentosDisponiveis);
+                preencherTexto('dashEquipamentosManutencao', equipamentosManutencao);
+
+                preencherTexto('dashEmprestimosAbertos', emprestimosAbertos);
+                preencherTexto('dashEmprestimosDevolvidos', emprestimosDevolvidos);
+                preencherTexto('dashEmprestimosAtrasados', emprestimosAtrasados);
+
+                preencherTexto('dashResumoTexto', `${colaboradoresAtivos} colaboradores ativos, ${equipamentosDisponiveis} equipamentos disponíveis e ${emprestimosAbertos} movimentações em aberto.`);
+                renderizarHistorico(emprestimos);
+                atualizarStatusConexao('online');
+            } catch (error) {
+                preencherTexto('dashResumoTexto', 'Não foi possível carregar os dados. Verifique se o servidor está rodando.');
+                renderizarHistorico([]);
+                atualizarStatusConexao('offline');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            carregarDashboard();
+
+            const btnAtualizarDashboard = document.getElementById('btnAtualizarDashboard');
+
+            if (btnAtualizarDashboard) {
+                btnAtualizarDashboard.addEventListener('click', carregarDashboard);
+            }
+        });
     </script>
+
     <script src="js/auth.js"></script>
 </body>
 </html>

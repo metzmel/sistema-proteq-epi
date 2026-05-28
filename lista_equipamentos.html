@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proteq EPI - Equipamentos</title>
+    <title>Proteq EPI - Inventário</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,20 +15,25 @@
             <i class="bi bi-shield-check"></i>
             <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
         </div>
+
         <ul class="sidebar-menu">
             <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
             <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
             <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
             <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
             <li><a href="lista_equipamentos.html" class="active"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
+
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
         </div>
@@ -37,35 +42,105 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
-                <h2 class="header-title m-0"><i class="bi bi-tools me-2"></i> BASE DE EQUIPAMENTOS</h2>
+                <h2 class="header-title m-0"><i class="bi bi-box-seam me-2"></i> INVENTÁRIO</h2>
             </div>
+
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
+                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>
                 <button class="icon-btn"><i class="bi bi-chat-dots"></i><span class="notification-badge">5</span></button>
                 <button class="icon-btn"><i class="bi bi-bell"></i><span class="notification-badge">3</span></button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
+
                 <div class="user-profile">
                     <div class="user-info text-end">
-                        <span class="user-name">Hillary Capinan</span>
-                        <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
-                    <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
+            <div class="glass-card mb-4" style="padding: 26px; border-left: 5px solid var(--primary-magenta);">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Visão geral</span>
+                        <h4 style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Resumo dos equipamentos</h4>
+                        <p style="margin: 6px 0 0; color: var(--text-muted); font-weight: 500;">Clique em uma categoria para filtrar a lista abaixo.</p>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end;">
+                        <div id="resumoFiltroEquipamento" style="background: var(--rosa-suave, #fff4f8); color: var(--rosa-escuro, #6f2b42); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 999px; padding: 8px 14px; font-size: 0.8rem; font-weight: 900;">
+                            Filtro atual: Todos
+                        </div>
+                        <div id="resumoEstoqueTotal" style="background: #e7f5eb; color: #2f7546; border: 1px solid #bfe4c9; border-radius: 999px; padding: 8px 14px; font-size: 0.8rem; font-weight: 900;">
+                            Estoque total: 0
+                        </div>
+                        <button type="button" id="btnLimparFiltroEquipamento" class="btn btn-outline-light btn-sm" style="border-radius: 999px; padding: 8px 14px; font-size: 0.8rem;">
+                            <i class="bi bi-x-circle me-1"></i> Limpar filtro
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-equipamento ativo" data-filtro="todos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-boxes" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Cadastrados</span>
+                            <strong id="resumoEquipamentosCadastrados" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para ver todos</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-equipamento" data-filtro="disponiveis" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-check2-circle" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Disponíveis</span>
+                            <strong id="resumoEquipamentosDisponiveis" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para filtrar</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-equipamento" data-filtro="manutencao" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-wrench-adjustable" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Manutenção</span>
+                            <strong id="resumoEquipamentosManutencao" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para filtrar</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-equipamento" data-filtro="indisponiveis" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fde8e8; color: #a43838; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-x-circle" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Indisponíveis</span>
+                            <strong id="resumoEquipamentosIndisponiveis" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para filtrar</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="mb-4 d-flex justify-content-between align-items-center">
-                <a href="cadastro_equipamento.html" class="btn btn-custom" style="padding: 10px 20px; font-size: 0.85rem;">
-                    <i class="bi bi-plus-lg me-2"></i> ADICIONAR
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;">
+                    <i class="bi bi-arrow-left me-2"></i>VOLTAR PARA DASHBOARD
                 </a>
                 
-                <div class="input-group" style="width: 350px; border-radius: 10px; box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);">
-                    <input type="text" class="form-control" id="inputPesquisaEquipamento" placeholder="Buscar por equipamento..." style="border-right: none; background: rgba(0,0,0,0.4); color: white;">
+                <div class="input-group" style="width: 350px; border-radius: 10px; box-shadow: 0 0 15px rgba(224, 30, 134, 0.2);">
+                    <input type="text" class="form-control" id="inputPesquisaEquipamento" placeholder="Buscar por nome, tipo ou status..." style="border-right: none; background: rgba(0,0,0,0.4); color: white;">
                     <button class="btn" type="button" id="btnPesquisarEquipamento" style="background: linear-gradient(45deg, var(--primary-magenta), var(--accent-purple)); border: none; border-radius: 0 10px 10px 0; padding: 10px 20px; color: white;">
                         <i class="bi bi-search"></i>
                     </button>
@@ -78,7 +153,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>EQUIPAMENTO</th>
+                                <th>NOME</th>
                                 <th>TIPO</th>
                                 <th>QUANTIDADE</th>
                                 <th>STATUS</th>
@@ -105,23 +180,27 @@
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body" style="padding: 10px 40px 40px;">
                     <form id="formEditarEquipamento">
                         <input type="hidden" id="editId">
                         <div class="row g-4">
-                            <div class="col-md-7">
+                            <div class="col-md-6">
                                 <label class="form-label" style="color: var(--primary-magenta);">NOME DO EQUIPAMENTO</label>
                                 <input type="text" class="form-control" id="editNome" required>
                             </div>
-                            <div class="col-md-5">
+
+                            <div class="col-md-6">
                                 <label class="form-label" style="color: var(--primary-magenta);">TIPO</label>
                                 <input type="text" class="form-control" id="editTipo" required>
                             </div>
-                            <div class="col-md-6">
+
+                            <div class="col-md-4">
                                 <label class="form-label" style="color: var(--primary-magenta);">QUANTIDADE</label>
                                 <input type="number" class="form-control" id="editQuantidade" min="0" required>
                             </div>
-                            <div class="col-md-6">
+
+                            <div class="col-md-8">
                                 <label class="form-label" style="color: var(--primary-magenta);">STATUS</label>
                                 <select class="form-select" id="editStatus" required>
                                     <option value="Disponível">Disponível</option>
@@ -129,11 +208,13 @@
                                     <option value="Indisponível">Indisponível</option>
                                 </select>
                             </div>
+
                             <div class="col-12">
                                 <label class="form-label" style="color: var(--primary-magenta);">DESCRIÇÃO</label>
                                 <textarea class="form-control" id="editDescricao" rows="3"></textarea>
                             </div>
                         </div>
+
                         <div class="text-end mt-5">
                             <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal" style="border-radius: 50px; padding: 12px 25px; font-weight: bold;">CANCELAR</button>
                             <button type="submit" class="btn btn-custom" style="padding: 12px 35px;">ATUALIZAR DADOS</button>
@@ -145,14 +226,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         const btnMenu = document.getElementById('btnMenuMobile');
         const sidebar = document.querySelector('.sidebar');
-        if(btnMenu && sidebar) {
+
+        if (btnMenu && sidebar) {
             btnMenu.addEventListener('click', (e) => {
                 sidebar.classList.toggle('aberta');
                 e.stopPropagation();
             });
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
                     sidebar.classList.remove('aberta');
@@ -160,6 +244,7 @@
             });
         }
     </script>
+
     <script src="js/equipamento.js"></script>
     <script src="js/auth.js"></script>
 </body>

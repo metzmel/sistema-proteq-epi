@@ -26,8 +26,8 @@
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html" class="active"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
@@ -37,13 +37,14 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
                 <h2 class="header-title m-0"><i class="bi bi-journal-text me-2"></i> RELATÓRIOS</h2>
             </div>
+
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
+                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>
                 <button class="icon-btn">
                     <i class="bi bi-chat-dots"></i>
                     <span class="notification-badge">5</span>
@@ -52,22 +53,95 @@
                     <i class="bi bi-bell"></i>
                     <span class="notification-badge">3</span>
                 </button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
 
                 <div class="user-profile">
                     <div class="user-info text-end">
-                        <span class="user-name">Hillary Capinan</span>
-                        <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
-                    <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
+            <div class="glass-card mb-4" style="padding: 26px; border-left: 5px solid var(--primary-magenta);">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Visão geral</span>
+                        <h4 style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Resumo dos empréstimos</h4>
+                        <p style="margin: 6px 0 0; color: var(--text-muted); font-weight: 500;">Clique em uma categoria para filtrar a lista abaixo.</p>
+                    </div>
+                    <div id="resumoFiltroAtual" style="background: var(--rosa-suave, #fff4f8); color: var(--rosa-escuro, #6f2b42); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 999px; padding: 8px 14px; font-size: 0.8rem; font-weight: 900;">
+                        Filtro atual: Em aberto
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-relatorio ativo" data-filtro="abertos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-box-arrow-up-right" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Em aberto</span>
+                            <strong id="resumoEmAberto" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoEmAbertoInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">0 registros</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-relatorio" data-filtro="devolvidos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-check2-circle" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Devolvidos</span>
+                            <strong id="resumoDevolvidos" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoDevolvidosInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">0 registros</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-relatorio" data-filtro="atrasados" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-clock-history" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Atrasados</span>
+                            <strong id="resumoAtrasados" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoAtrasadosInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">0 registros</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-relatorio" data-filtro="ocorrencias" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fde8e8; color: #a43838; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-exclamation-triangle" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Ocorrências</span>
+                            <strong id="resumoOcorrencias" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoOcorrenciasInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">0 registros</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="glass-card mb-4" style="padding: 25px;">
-                <h6 class="mb-3" style="color: var(--primary-magenta); font-weight: 700; letter-spacing: 1px;"><i class="bi bi-funnel me-2"></i> FILTROS AVANÇADOS</h6>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+                    <h6 class="m-0" style="color: var(--primary-magenta); font-weight: 900; letter-spacing: 1px;">
+                        <i class="bi bi-funnel me-2"></i> FILTROS AVANÇADOS
+                    </h6>
+
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-outline-light btn-sm" id="btnLimparFiltrosRelatorio" style="border-radius: 999px;">
+                            <i class="bi bi-x-circle me-1"></i> Limpar filtros
+                        </button>
+                        <button type="button" class="btn btn-custom btn-sm" id="btnExportarRelatorio" style="border-radius: 999px;">
+                            <i class="bi bi-download me-1"></i> Exportar relatório
+                        </button>
+                    </div>
+                </div>
+
                 <div class="row g-3">
                     <div class="col-md-4">
                         <input type="text" id="filtroColaborador" class="form-control" placeholder="Buscar por colaborador...">
@@ -97,6 +171,7 @@
                                 <th>COLABORADOR</th>
                                 <th>EQUIPAMENTO</th>
                                 <th>DATA SAÍDA</th>
+                                <th>PREVISTA</th>
                                 <th>DEVOLUÇÃO</th>
                                 <th>STATUS</th>
                             </tr>
@@ -105,7 +180,10 @@
                     </table>
                 </div>
             </div>
-            <footer class="system-footer"><p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p></footer>
+
+            <footer class="system-footer">
+                <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p>
+            </footer>
         </main>
     </div>
     
@@ -113,11 +191,13 @@
     <script>
         const btnMenu = document.getElementById('btnMenuMobile');
         const sidebar = document.querySelector('.sidebar');
-        if(btnMenu && sidebar) {
+
+        if (btnMenu && sidebar) {
             btnMenu.addEventListener('click', (e) => {
                 sidebar.classList.toggle('aberta');
                 e.stopPropagation();
             });
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
                     sidebar.classList.remove('aberta');

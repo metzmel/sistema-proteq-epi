@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proteq EPI - Sobre o Projeto</title>
+    <title>Proteq EPI - Sobre</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,135 +15,623 @@
             <i class="bi bi-shield-check"></i>
             <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
         </div>
+
         <ul class="sidebar-menu">
             <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
             <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
             <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
             <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
             <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
+
         <div class="sidebar-footer">
-            <a href="#"><i class="bi bi-power"></i> Encerrar Sessão</a>
+            <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
         </div>
     </aside>
 
     <div class="main-wrapper">
         <header class="top-header">
-            <h2 class="header-title"><i class="bi bi-info-circle me-2"></i> SOBRE O PROJETO</h2>
+            <div style="display: flex; align-items: center;">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
+                    <i class="bi bi-list" style="font-size: 2rem;"></i>
+                </button>
+                <h2 class="header-title m-0"><i class="bi bi-info-circle me-2"></i> SOBRE O PROJETO</h2>
+            </div>
+
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));"><i class="bi bi-question-circle-fill"></i></button>
-                <button class="icon-btn">
-                    <i class="bi bi-chat-dots"></i>
-                    <span class="notification-badge">5</span>
+                <button class="icon-btn" onclick="window.location.href='sobre.html'" style="color: var(--primary-magenta);">
+                    <i class="bi bi-question-circle-fill"></i>
                 </button>
-                <button class="icon-btn">
-                    <i class="bi bi-bell"></i>
-                    <span class="notification-badge">3</span>
-                </button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn"><i class="bi bi-chat-dots"></i><span class="notification-badge">5</span></button>
+                <button class="icon-btn"><i class="bi bi-bell"></i><span class="notification-badge">3</span></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
 
                 <div class="user-profile">
                     <div class="user-info text-end">
-                    <span class="user-name">Hillary Capinan</span>
-                    <span class="user-role">ADMINISTRADORA</span>
-                    <a href="#" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
-                </div>
-                    <div class="avatar-circle">HC</div>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
+                    </div>
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
-            
-            <div class="glass-card mb-4" style="border-left: 5px solid var(--primary-magenta);">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <h3 class="fw-bold mb-3" style="color: var(--text-light); text-transform: uppercase; letter-spacing: 2px;">Sistema de Gerenciamento Proteq EPI</h3>
-                        <p class="mb-1"><strong style="color: var(--primary-magenta);">DESENVOLVEDORA:</strong> HILLARY SANTOS CAPINAN</p>
-                        <p class="mb-1"><strong style="color: var(--primary-magenta);">CURSO:</strong> Desenvolvimento de Sistemas</p>
-                        <p class="mb-0"><strong style="color: var(--primary-magenta);">DISCIPLINA:</strong> Desenvolvimento de Sistemas</p>
+            <div class="glass-card mb-4" style="padding: 30px; border-left: 5px solid var(--primary-magenta);">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Projeto individual</span>
+                        <h3 style="font-weight: 900; margin: 0; letter-spacing: -0.045em;">Proteq EPI</h3>
                     </div>
-                    <div class="col-md-4 text-end">
-                        <i class="bi bi-file-earmark-code" style="font-size: 6rem; color: rgba(224, 30, 134, 0.2);"></i>
+
+                    <div class="col-lg-4 text-lg-end">
+                        <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modalApresentacao">
+                            <i class="bi bi-play-circle me-2"></i> Modo apresentação
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="glass-card h-100">
-                        <h5 class="mb-4" style="color: var(--primary-magenta); font-weight: 800;"><i class="bi bi-check2-all me-2"></i>REQUISITOS ATENDIDOS (ESCOPO)</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Tela Base:</strong> Dashboard e Menu Lateral em todas as páginas com identificação do usuário.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Módulo de Colaboradores:</strong> Telas de cadastro e listagem integradas ao Banco de Dados.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Módulo de Equipamentos:</strong> Cadastro, listagem e controle de estoque de EPIs.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Controle de Empréstimos:</strong> Validação rigorosa de datas, proteção de dados e lógicas de status (Fornecido, Devolvido, etc).</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Filtro Avançado (AND):</strong> Tela de relatórios cruzando parâmetros de Colaborador, Equipamento e Status.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
-                                <div><strong>Persistência:</strong> Servidor backend estruturado em Node.js com banco MySQL relacional.</div>
-                            </li>
-                        </ul>
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <div class="glass-card h-100" style="padding: 24px;">
+                        <div style="width: 46px; height: 46px; border-radius: 16px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 16px;">
+                            <i class="bi bi-person-badge" style="font-size: 1.35rem;"></i>
+                        </div>
+                        <h5 style="font-weight: 900; margin-bottom: 16px;">Identificação</h5>
+
+                        <div style="display: grid; gap: 14px;">
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Desenvolvedora</span>
+                                <strong style="display: block; color: var(--text-light); font-size: 1rem; margin-top: 3px;">Hillary Santos Capinan</strong>
+                            </div>
+
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Curso</span>
+                                <strong style="display: block; color: var(--text-light); font-size: 1rem; margin-top: 3px;">Desenvolvimento de Sistemas</strong>
+                            </div>
+
+                            <div>
+                                <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Tema</span>
+                                <strong style="display: block; color: var(--text-light); font-size: 1rem; margin-top: 3px;">Controle de Equipamentos de Proteção Individual</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-                    <div class="glass-card h-100">
-                        <h5 class="mb-4" style="color: var(--accent-purple); font-weight: 800;"><i class="bi bi-stars me-2"></i>EXTRAS E DIFERENCIAIS IMPLEMENTADOS</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
-                                <div><strong>UI/UX Premium:</strong> Interface baseada em Glassmorphism, garantindo design limpo, moderno e profissional.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
-                                <div><strong>Tematização Dinâmica:</strong> O sistema muda automaticamente a paleta de cores (Rosa, Azul, Laranja, Verde) para ajudar na orientação visual do usuário em cada módulo.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
-                                <div><strong>Filtros em Tempo Real:</strong> As tabelas respondem letra por letra à digitação, sem necessidade de recarregar a página.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
-                                <div><strong>Edição em Modais:</strong> As atualizações de dados ocorrem em janelas sobrepostas, acelerando o fluxo de trabalho sem tirar o usuário da lista principal.</div>
-                            </li>
-                            <li class="mb-3 d-flex align-items-start">
-                                <i class="bi bi-star-fill mt-1 me-3" style="color: var(--accent-purple);"></i>
-                                <div><strong>Tratamento de Erros:</strong> Blindagem completa no Frontend e Backend para prevenir envio de formulários incompletos ou dados incompatíveis.</div>
-                            </li>
-                        </ul>
+                <div class="col-lg-4">
+                    <div class="glass-card h-100" style="padding: 24px;">
+                        <div style="width: 46px; height: 46px; border-radius: 16px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 16px;">
+                            <i class="bi bi-stack" style="font-size: 1.35rem;"></i>
+                        </div>
+                        <h5 style="font-weight: 900; margin-bottom: 16px;">Tecnologias</h5>
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="badge bg-primary p-2">HTML</span>
+                            <span class="badge bg-primary p-2">CSS</span>
+                            <span class="badge bg-primary p-2">JavaScript</span>
+                            <span class="badge bg-info p-2">Bootstrap</span>
+                            <span class="badge bg-success p-2">Node.js</span>
+                            <span class="badge bg-success p-2">Express</span>
+                            <span class="badge bg-danger p-2">MySQL</span>
+                            <span class="badge bg-info p-2">API REST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="glass-card h-100" style="padding: 24px;">
+                        <div style="width: 46px; height: 46px; border-radius: 16px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 16px;">
+                            <i class="bi bi-folder-check" style="font-size: 1.35rem;"></i>
+                        </div>
+                        <h5 style="font-weight: 900; margin-bottom: 16px;">Estrutura</h5>
+
+                        <div style="display: grid; gap: 12px;">
+                            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                <span style="color: var(--text-muted); font-weight: 800;">Frontend</span>
+                                <strong style="color: var(--text-light);">HTML, CSS e JS</strong>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                <span style="color: var(--text-muted); font-weight: 800;">Backend</span>
+                                <strong style="color: var(--text-light);">Node.js</strong>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                <span style="color: var(--text-muted); font-weight: 800;">Banco</span>
+                                <strong style="color: var(--text-light);">MySQL</strong>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                <span style="color: var(--text-muted); font-weight: 800;">Interface</span>
+                                <strong style="color: var(--text-light);">Responsiva</strong>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <footer class="system-footer mt-5">
+            <div class="glass-card mb-4" style="padding: 26px;">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Funcionalidades</span>
+                        <h4 style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Entregas do sistema</h4>
+                    </div>
+
+                    <div style="background: var(--rosa-suave, #fff4f8); color: var(--rosa-escuro, #6f2b42); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 999px; padding: 8px 14px; font-size: 0.8rem; font-weight: 900;">
+                        Versão atual
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-box-arrow-in-right" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Login</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Autenticação de usuário</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-people" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Colaboradores</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Cadastro, listagem, busca e edição</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-tools" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Equipamentos</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Estoque, status e manutenção</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #efe1ff; color: #683b91; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-arrow-left-right" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Movimentações</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Empréstimos, devoluções e ocorrências</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3 mt-1">
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-journal-text" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Relatórios</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Filtros, resumo e exportação</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-chat-dots" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Mensagens</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Comunicação entre usuários</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-gear-wide-connected" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Sistema</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Status técnico e conexão</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fde8e8; color: #a43838; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-phone" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <strong style="display: block; color: var(--text-light); font-size: 1rem;">Responsividade</strong>
+                            <span style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Menu adaptado para telas menores</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-xl-7">
+                    <div class="glass-card h-100" style="padding: 26px;">
+                        <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                            <div>
+                                <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Módulos</span>
+                                <h4 style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Páginas desenvolvidas</h4>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; gap: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Dashboard</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Cards com dados reais e histórico recente</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Login</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Entrada e sessão do usuário</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Cadastros e listas</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Colaboradores e equipamentos</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Controle de EPI</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Registro e atualização de movimentações</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Relatórios</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Filtros, visão geral e arquivo CSV</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <div>
+                                    <strong style="display: block; color: var(--text-light);">Perfil, Sistema e Mensagens</strong>
+                                    <small style="color: var(--text-muted); font-weight: 600;">Usuário logado, conexão e comunicação interna</small>
+                                </div>
+                                <span class="badge bg-success p-2">Concluído</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-5">
+                    <div class="glass-card h-100" style="padding: 26px;">
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Backend</span>
+                        <h4 style="font-weight: 900; margin: 0 0 18px; letter-spacing: -0.04em;">Rotas implementadas</h4>
+
+                        <div style="display: grid; gap: 12px;">
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <strong style="display: block; color: var(--text-light);">/api/login</strong>
+                                <small style="color: var(--text-muted); font-weight: 600;">Autenticação</small>
+                            </div>
+
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <strong style="display: block; color: var(--text-light);">/api/colaboradores</strong>
+                                <small style="color: var(--text-muted); font-weight: 600;">Cadastro, consulta, edição e exclusão</small>
+                            </div>
+
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <strong style="display: block; color: var(--text-light);">/api/equipamentos</strong>
+                                <small style="color: var(--text-muted); font-weight: 600;">Cadastro, consulta, edição e exclusão</small>
+                            </div>
+
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <strong style="display: block; color: var(--text-light);">/api/emprestimos</strong>
+                                <small style="color: var(--text-muted); font-weight: 600;">Movimentações e relatório</small>
+                            </div>
+
+                            <div style="padding: 14px; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 15px; background: var(--bg-card-soft, #f8f3ee);">
+                                <strong style="display: block; color: var(--text-light);">/api/mensagens</strong>
+                                <small style="color: var(--text-muted); font-weight: 600;">Envio e leitura de mensagens</small>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <a href="sistema.html" class="btn btn-custom">
+                                <i class="bi bi-gear-wide-connected"></i> Ver sistema
+                            </a>
+                            <a href="relatorio_emprestimos.html" class="btn btn-outline-light">
+                                <i class="bi bi-journal-text"></i> Ver relatórios
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="system-footer">
                 <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p>
             </footer>
         </main>
     </div>
 
+    <div class="modal fade" id="modalApresentacao" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content" style="background: var(--bg-glass); backdrop-filter: blur(25px); border: 1px solid var(--glass-border); border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.55); overflow: hidden;">
+                <div class="modal-header border-0" style="padding: 28px 34px 10px;">
+                    <div>
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Apresentação</span>
+                        <h4 class="modal-title" style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Proteq EPI</h4>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+
+                <div class="modal-body" style="padding: 20px 34px 34px;">
+                    <div id="carouselApresentacao" class="carousel slide" data-bs-interval="false">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row g-4 align-items-stretch">
+                                    <div class="col-lg-5">
+                                        <div style="height: 100%; background: var(--rosa-suave, #fff4f8); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 22px; padding: 28px; color: var(--rosa-escuro, #6f2b42);">
+                                            <i class="bi bi-shield-check" style="font-size: 3rem;"></i>
+                                            <h3 style="font-weight: 900; margin: 18px 0 8px;">Proteq EPI</h3>
+                                            <p style="font-weight: 700; margin: 0; line-height: 1.6;">Sistema web para cadastro, controle e acompanhamento de EPIs.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7">
+                                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 22px; padding: 28px;">
+                                            <h5 style="font-weight: 900; margin-bottom: 18px;">Dados do projeto</h5>
+                                            <div style="display: grid; gap: 14px;">
+                                                <div>
+                                                    <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase;">Desenvolvedora</span>
+                                                    <strong style="color: var(--text-light);">Hillary Santos Capinan</strong>
+                                                </div>
+                                                <div>
+                                                    <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase;">Curso</span>
+                                                    <strong style="color: var(--text-light);">Desenvolvimento de Sistemas</strong>
+                                                </div>
+                                                <div>
+                                                    <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase;">Banco de dados</span>
+                                                    <strong style="color: var(--text-light);">MySQL</strong>
+                                                </div>
+                                                <div>
+                                                    <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase;">Backend</span>
+                                                    <strong style="color: var(--text-light);">Node.js + Express</strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 22px; padding: 30px;">
+                                    <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Módulos</span>
+                                    <h4 style="font-weight: 900; margin-bottom: 24px;">O que o sistema tem</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-people" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Colaboradores</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Cadastro, edição, busca e status.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-tools" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Equipamentos</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Inventário, estoque baixo e manutenção.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-arrow-left-right" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Movimentações</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Empréstimos, devoluções e ocorrências.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-journal-text" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Relatórios</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Filtros, cards e exportação CSV.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-chat-dots" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Mensagens</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Envio entre usuários do sistema.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="border-radius: 18px; border: 1px solid var(--border-soft, #ebe4dc); background: white; padding: 18px; height: 100%;">
+                                                <i class="bi bi-bell" style="color: var(--primary-magenta); font-size: 1.6rem;"></i>
+                                                <strong style="display: block; margin-top: 12px;">Notificações</strong>
+                                                <small style="color: var(--text-muted); font-weight: 600;">Atrasos, ocorrências e estoque baixo.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="row g-4">
+                                    <div class="col-lg-6">
+                                        <div style="height: 100%; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 22px; padding: 28px;">
+                                            <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Demonstração</span>
+                                            <h4 style="font-weight: 900; margin-bottom: 18px;">Roteiro rápido</h4>
+
+                                            <div style="display: grid; gap: 12px;">
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">1.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Entrar pelo login</span>
+                                                </div>
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">2.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Mostrar o dashboard com números reais</span>
+                                                </div>
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">3.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Abrir equipamentos e estoque baixo</span>
+                                                </div>
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">4.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Registrar ou consultar uma movimentação</span>
+                                                </div>
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">5.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Abrir relatórios e exportar CSV</span>
+                                                </div>
+                                                <div style="display: flex; gap: 12px;">
+                                                    <strong style="color: var(--primary-magenta);">6.</strong>
+                                                    <span style="color: var(--text-light); font-weight: 700;">Testar mensagens e notificações</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div style="height: 100%; background: var(--rosa-suave, #fff4f8); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 22px; padding: 28px;">
+                                            <span style="display: inline-block; color: var(--rosa-escuro, #6f2b42); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Acessos</span>
+                                            <h4 style="font-weight: 900; margin-bottom: 18px; color: var(--rosa-escuro, #6f2b42);">Usuários de teste</h4>
+
+                                            <div style="display: grid; gap: 12px;">
+                                                <div style="background: white; border-radius: 16px; padding: 14px; border: 1px solid var(--rosa-borda, #e4b3c2);">
+                                                    <strong style="display: block;">Hillary</strong>
+                                                    <small style="font-weight: 700; color: var(--text-muted);">hillary@admin.com • 123456</small>
+                                                </div>
+                                                <div style="background: white; border-radius: 16px; padding: 14px; border: 1px solid var(--rosa-borda, #e4b3c2);">
+                                                    <strong style="display: block;">Professor Gabriel</strong>
+                                                    <small style="font-weight: 700; color: var(--text-muted);">gabriel@senai.com • senai123</small>
+                                                </div>
+                                                <div style="background: white; border-radius: 16px; padding: 14px; border: 1px solid var(--rosa-borda, #e4b3c2);">
+                                                    <strong style="display: block;">Professor Yanes</strong>
+                                                    <small style="font-weight: 700; color: var(--text-muted);">yanes@senai.com • senai123</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 22px; padding: 30px;">
+                                    <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Banco de dados</span>
+                                    <h4 style="font-weight: 900; margin-bottom: 24px;">Tabelas principais</h4>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <div style="background: white; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                                                <strong>usuario</strong>
+                                                <small style="display: block; color: var(--text-muted); font-weight: 600;">Login e perfil</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="background: white; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                                                <strong>colaborador</strong>
+                                                <small style="display: block; color: var(--text-muted); font-weight: 600;">Funcionários cadastrados</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div style="background: white; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                                                <strong>equipamento</strong>
+                                                <small style="display: block; color: var(--text-muted); font-weight: 600;">EPIs e estoque</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div style="background: white; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                                                <strong>emprestimo</strong>
+                                                <small style="display: block; color: var(--text-muted); font-weight: 600;">Movimentações registradas</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div style="background: white; border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                                                <strong>mensagem</strong>
+                                                <small style="display: block; color: var(--text-muted); font-weight: 600;">Mensagens entre usuários</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4" style="background: var(--rosa-suave, #fff4f8); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 18px; padding: 18px; color: var(--rosa-escuro, #6f2b42);">
+                                        <strong style="display: block; margin-bottom: 4px;">Arquivo de entrega</strong>
+                                        <span style="font-weight: 700;">O script SQL cria o banco, as tabelas e alguns dados para demonstração.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center gap-3 mt-4 flex-wrap">
+                            <button class="btn btn-outline-light" type="button" data-bs-target="#carouselApresentacao" data-bs-slide="prev" style="border-radius: 999px;">
+                                <i class="bi bi-arrow-left me-2"></i> Anterior
+                            </button>
+
+                            <div style="display: flex; gap: 6px;">
+                                <button type="button" data-bs-target="#carouselApresentacao" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: var(--primary-magenta);"></button>
+                                <button type="button" data-bs-target="#carouselApresentacao" data-bs-slide-to="1" aria-label="Slide 2" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: var(--rosa-borda, #e4b3c2);"></button>
+                                <button type="button" data-bs-target="#carouselApresentacao" data-bs-slide-to="2" aria-label="Slide 3" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: var(--rosa-borda, #e4b3c2);"></button>
+                                <button type="button" data-bs-target="#carouselApresentacao" data-bs-slide-to="3" aria-label="Slide 4" style="width: 10px; height: 10px; border-radius: 50%; border: none; background: var(--rosa-borda, #e4b3c2);"></button>
+                            </div>
+
+                            <button class="btn btn-custom" type="button" data-bs-target="#carouselApresentacao" data-bs-slide="next">
+                                Próximo <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const btnMenu = document.getElementById('btnMenuMobile');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (btnMenu && sidebar) {
+            btnMenu.addEventListener('click', (e) => {
+                sidebar.classList.toggle('aberta');
+                e.stopPropagation();
+            });
+
+            document.addEventListener('click', (e) => {
+                if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
+                    sidebar.classList.remove('aberta');
+                }
+            });
+        }
+
+        const carouselApresentacao = document.getElementById('carouselApresentacao');
+
+        if (carouselApresentacao) {
+            carouselApresentacao.addEventListener('slide.bs.carousel', (event) => {
+                const indicadores = document.querySelectorAll('[data-bs-target="#carouselApresentacao"][data-bs-slide-to]');
+
+                indicadores.forEach((indicador, index) => {
+                    indicador.style.background = index === event.to ? 'var(--primary-magenta)' : 'var(--rosa-borda, #e4b3c2)';
+                });
+            });
+        }
+    </script>
+
+    <script src="js/auth.js"></script>
 </body>
 </html>

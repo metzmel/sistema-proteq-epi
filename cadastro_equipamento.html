@@ -10,25 +10,30 @@
 </head>
 <body class="theme-equipamento">
 
-   <aside class="sidebar">
+    <aside class="sidebar">
         <div class="sidebar-brand">
             <i class="bi bi-shield-check"></i>
             <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
         </div>
+
         <ul class="sidebar-menu">
             <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
             <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
             <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
             <li><a href="cadastro_equipamento.html" class="active"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
             <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
+
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
         </div>
@@ -37,67 +42,117 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
-                <h2 class="header-title m-0"><i class="bi bi-tools me-2"></i> CADASTRAR EQUIPAMENTO</h2>
+                <h2 class="header-title m-0"><i class="bi bi-tools me-2"></i> NOVO EQUIPAMENTO</h2>
             </div>
+
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
+                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>
                 <button class="icon-btn"><i class="bi bi-chat-dots"></i><span class="notification-badge">5</span></button>
                 <button class="icon-btn"><i class="bi bi-bell"></i><span class="notification-badge">3</span></button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
+
                 <div class="user-profile">
                     <div class="user-info text-end">
-                        <span class="user-name">Hillary Capinan</span>
-                        <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
-                    <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
-            <div class="mb-4">
-                <a href="lista_equipamentos.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;" onmouseover="this.style.color='var(--primary-magenta)'" onmouseout="this.style.color='var(--text-muted)'">
-                    <i class="bi bi-arrow-left me-2"></i>VOLTAR PARA EQUIPAMENTOS
-                </a>
+            <div class="glass-card mb-4" style="padding: 30px; border-left: 5px solid var(--primary-magenta);">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px;">Cadastro</span>
+                        <h3 style="font-weight: 900; margin: 0; letter-spacing: -0.045em;">Adicionar equipamento</h3>
+                        <p style="margin: 8px 0 0; color: var(--text-muted); font-weight: 500;">Preencha os dados principais para incluir um novo EPI no inventário.</p>
+                    </div>
+
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="lista_equipamentos.html" class="btn btn-outline-light" style="border-radius: 999px;">
+                            <i class="bi bi-box-seam me-2"></i> Ver inventário
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="glass-card">
-                <form id="formCadastroEquipamento">
+
+            <form id="formCadastroEquipamento">
+                <div class="glass-card" style="padding: 30px;">
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div style="width: 46px; height: 46px; border-radius: 16px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; flex-shrink: 0;">
+                            <i class="bi bi-clipboard-check" style="font-size: 1.35rem;"></i>
+                        </div>
+                        <div>
+                            <h5 style="font-weight: 900; margin: 0;">Dados do equipamento</h5>
+                            <p style="margin: 4px 0 0; color: var(--text-muted); font-weight: 500;">Informações usadas no estoque e no controle de movimentações.</p>
+                        </div>
+                    </div>
+
                     <div class="row g-4">
-                        <div class="col-md-7">
-                            <label class="form-label" style="color: var(--primary-magenta);">NOME DO EQUIPAMENTO *</label>
-                            <input type="text" class="form-control" id="nome" required>
+                        <div class="col-lg-6">
+                            <label for="nome" class="form-label">Nome do equipamento</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Ex: Capacete de segurança" required>
                         </div>
-                        <div class="col-md-5">
-                            <label class="form-label" style="color: var(--primary-magenta);">TIPO (Ex: Luva, Capacete) *</label>
-                            <input type="text" class="form-control" id="tipo" required>
+
+                        <div class="col-lg-4">
+                            <label for="tipo" class="form-label">Tipo</label>
+                            <input type="text" class="form-control" id="tipo" placeholder="Ex: Proteção da cabeça" required>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label" style="color: var(--primary-magenta);">QUANTIDADE EM ESTOQUE *</label>
-                            <input type="number" class="form-control" id="quantidade" min="0" required>
+
+                        <div class="col-lg-2">
+                            <label for="quantidade" class="form-label">Quantidade</label>
+                            <input type="number" class="form-control" id="quantidade" min="0" placeholder="0" required>
                         </div>
-                        <div class="col-md-6">
-                            <label class="form-label" style="color: var(--primary-magenta);">STATUS *</label>
+
+                        <div class="col-lg-4">
+                            <label for="status" class="form-label">Status</label>
                             <select class="form-select" id="status" required>
-                                <option value="Disponível">Disponível</option>
+                                <option value="Disponível" selected>Disponível</option>
                                 <option value="Em Manutenção">Em Manutenção</option>
                                 <option value="Indisponível">Indisponível</option>
                             </select>
                         </div>
-                        <div class="col-12">
-                            <label class="form-label" style="color: var(--primary-magenta);">DESCRIÇÃO / DETALHES (OPCIONAL)</label>
-                            <textarea class="form-control" id="descricao" rows="3"></textarea>
+
+                        <div class="col-lg-8">
+                            <label for="descricao" class="form-label">Descrição</label>
+                            <input type="text" class="form-control" id="descricao" placeholder="Ex: CA, tamanho, marca ou observação do equipamento">
                         </div>
                     </div>
-                    <div class="text-end mt-5">
-                        <button type="submit" class="btn btn-custom">SALVAR EQUIPAMENTO</button>
+
+                    <div class="mt-4" style="background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px;">
+                        <div class="d-flex align-items-start gap-3">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; flex-shrink: 0;">
+                                <i class="bi bi-exclamation-triangle" style="font-size: 1.15rem;"></i>
+                            </div>
+                            <div>
+                                <h6 style="font-weight: 900; margin-bottom: 5px;">Controle de estoque</h6>
+                                <p style="margin: 0; color: var(--text-muted); font-weight: 600; line-height: 1.6;">Equipamentos disponíveis com quantidade igual ou menor que 2 serão sinalizados como estoque baixo no inventário.</p>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
+
+                    <div class="d-flex justify-content-between align-items-center gap-3 flex-wrap mt-5">
+                        <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;">
+                            <i class="bi bi-arrow-left me-2"></i>VOLTAR PARA DASHBOARD
+                        </a>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button type="reset" class="btn btn-outline-light" style="border-radius: 999px; padding: 11px 24px;">
+                                <i class="bi bi-eraser me-2"></i> Limpar
+                            </button>
+                            <button type="submit" class="btn btn-custom" style="padding: 11px 30px;">
+                                <i class="bi bi-check2-circle me-2"></i> Salvar equipamento
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
             <footer class="system-footer">
                 <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>. Todos os direitos reservados.</p>
@@ -106,14 +161,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         const btnMenu = document.getElementById('btnMenuMobile');
         const sidebar = document.querySelector('.sidebar');
-        if(btnMenu && sidebar) {
+
+        if (btnMenu && sidebar) {
             btnMenu.addEventListener('click', (e) => {
                 sidebar.classList.toggle('aberta');
                 e.stopPropagation();
             });
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
                     sidebar.classList.remove('aberta');
@@ -121,6 +179,7 @@
             });
         }
     </script>
+
     <script src="js/equipamento.js"></script>
     <script src="js/auth.js"></script>
 </body>

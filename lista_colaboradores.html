@@ -26,8 +26,7 @@
             <li><a href="controle_epi.html"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+<li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
@@ -37,7 +36,7 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
                 <h2 class="header-title m-0"><i class="bi bi-card-list me-2"></i> BASE DE DADOS</h2>
@@ -47,13 +46,13 @@
                 <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
                 <button class="icon-btn"><i class="bi bi-chat-dots"></i><span class="notification-badge" style="background: var(--accent-purple);">5</span></button>
                 <button class="icon-btn"><i class="bi bi-bell"></i><span class="notification-badge">3</span></button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
 
                 <div class="user-profile">
                     <div class="user-info text-end">
                         <span class="user-name">Hillary Capinan</span>
                         <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
                     <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
@@ -61,13 +60,72 @@
         </header>
 
         <main class="content-area">
+            <div class="glass-card mb-4" style="padding: 26px; border-left: 5px solid var(--primary-magenta);">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
+                    <div>
+                        <span style="display: inline-block; color: var(--primary-magenta); font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px;">Visão geral</span>
+                        <h4 style="font-weight: 900; margin: 0; letter-spacing: -0.04em;">Resumo dos colaboradores</h4>
+                        <p style="margin: 6px 0 0; color: var(--text-muted); font-weight: 500;">Clique em uma categoria para filtrar a lista abaixo.</p>
+                    </div>
+                    <div id="resumoFiltroAtual" style="background: var(--rosa-suave, #fff4f8); color: var(--rosa-escuro, #6f2b42); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 999px; padding: 8px 14px; font-size: 0.8rem; font-weight: 900;">
+                        Filtro atual: Todos
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-colaborador ativo" data-filtro="todos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--rosa-borda, #e4b3c2); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: var(--rosa-suave, #fff4f8); color: var(--primary-magenta); display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-people" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Cadastrados</span>
+                            <strong id="resumoCadastrados" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoCadastradosInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para ver todos</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-colaborador" data-filtro="ativos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #e7f5eb; color: #2f7546; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-person-check" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Ativos</span>
+                            <strong id="resumoAtivos" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoAtivosInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para filtrar</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-colaborador" data-filtro="inativos" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #fff2d8; color: #97651f; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-person-dash" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Inativos</span>
+                            <strong id="resumoInativos" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoInativosInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para filtrar</small>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <button type="button" class="resumo-card-colaborador" data-filtro="setores" style="width: 100%; height: 100%; text-align: left; background: var(--bg-card-soft, #f8f3ee); border: 1px solid var(--border-soft, #ebe4dc); border-radius: 18px; padding: 18px; cursor: pointer; transition: 0.2s;">
+                            <div style="width: 42px; height: 42px; border-radius: 14px; background: #efe1ff; color: #683b91; display: grid; place-items: center; margin-bottom: 14px;">
+                                <i class="bi bi-diagram-3" style="font-size: 1.25rem;"></i>
+                            </div>
+                            <span style="display: block; color: var(--text-muted); font-size: 0.74rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.7px;">Setores</span>
+                            <strong id="resumoSetores" style="display: block; color: var(--text-light); font-size: 1.75rem; line-height: 1.1; margin-top: 6px;">0</strong>
+                            <small id="resumoSetoresInfo" style="display: block; color: var(--text-muted); font-weight: 600; margin-top: 4px;">Clique para ordenar</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="mb-4 d-flex justify-content-between align-items-center">
-                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;" onmouseover="this.style.color='var(--primary-magenta)'" onmouseout="this.style.color='var(--text-muted)'">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none; font-weight: bold; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s;">
                     <i class="bi bi-arrow-left me-2"></i>VOLTAR PARA DASHBOARD
                 </a>
                 
                 <div class="input-group" style="width: 350px; border-radius: 10px; box-shadow: 0 0 15px rgba(224, 30, 134, 0.2);">
-                    <input type="text" class="form-control" id="inputPesquisa" placeholder="Buscar por nome..." style="border-right: none; background: rgba(0,0,0,0.4); color: white;">
+                    <input type="text" class="form-control" id="inputPesquisa" placeholder="Buscar por nome, CPF, cargo ou setor..." style="border-right: none; background: rgba(0,0,0,0.4); color: white;">
                     <button class="btn" type="button" id="btnPesquisar" style="background: linear-gradient(45deg, var(--primary-magenta), var(--accent-purple)); border: none; border-radius: 0 10px 10px 0; padding: 10px 20px; color: white;">
                         <i class="bi bi-search"></i>
                     </button>

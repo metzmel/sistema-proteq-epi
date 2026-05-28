@@ -15,20 +15,25 @@
             <i class="bi bi-shield-check"></i>
             <span class="brand-text">Proteq EPI<span class="tm-symbol">&reg;</span></span>
         </div>
+
         <ul class="sidebar-menu">
             <li><a href="index.html"><i class="bi bi-grid-1x2"></i> Dashboard</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Módulos</li>
             <li><a href="cadastro_colaborador.html"><i class="bi bi-person-plus"></i> Novo Colaborador</a></li>
             <li><a href="lista_colaboradores.html"><i class="bi bi-card-list"></i> Lista de Colaboradores</a></li>
             <li><a href="cadastro_equipamento.html"><i class="bi bi-tools"></i> Novo Equipamento</a></li>
             <li><a href="lista_equipamentos.html"><i class="bi bi-box-seam"></i> Lista de Equipamentos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Operação</li>
             <li><a href="controle_epi.html" class="active"><i class="bi bi-arrow-left-right"></i> Controle de EPI</a></li>
             <li><a href="relatorio_emprestimos.html"><i class="bi bi-journal-text"></i> Relatório de Empréstimos</a></li>
+
             <li class="px-4 mt-4 mb-2 small text-uppercase" style="color: rgba(255,255,255,0.7); font-weight: 800; letter-spacing: 1.5px; font-size: 0.65rem;">Configurações</li>
-            <li><a href="#"><i class="bi bi-person"></i> Perfil</a></li>
-            <li><a href="#"><i class="bi bi-gear"></i> Sistema</a></li>
+            <li><a href="perfil.html"><i class="bi bi-person"></i> Perfil</a></li>
+            <li><a href="sistema.html"><i class="bi bi-gear"></i> Sistema</a></li>
         </ul>
+
         <div class="sidebar-footer">
             <a href="#" id="btnEncerrarSessao"><i class="bi bi-power"></i> Encerrar Sessão</a>
         </div>
@@ -37,32 +42,35 @@
     <div class="main-wrapper">
         <header class="top-header">
             <div style="display: flex; align-items: center;">
-                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta); filter: drop-shadow(0 0 5px var(--primary-magenta));">
+                <button class="icon-btn d-md-none me-3" id="btnMenuMobile" style="color: var(--primary-magenta);">
                     <i class="bi bi-list" style="font-size: 2rem;"></i>
                 </button>
                 <h2 class="header-title m-0"><i class="bi bi-arrow-left-right me-2"></i> CONTROLE DE EPI</h2>
             </div>
+
             <div class="header-actions">
-                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>                
+                <button class="icon-btn" onclick="window.location.href='sobre.html'"><i class="bi bi-question-circle"></i></button>
                 <button class="icon-btn"><i class="bi bi-chat-dots"></i><span class="notification-badge">5</span></button>
                 <button class="icon-btn"><i class="bi bi-bell"></i><span class="notification-badge">3</span></button>
-                <button class="icon-btn"><i class="bi bi-gear"></i></button>
+                <button class="icon-btn" onclick="window.location.href='sistema.html'"><i class="bi bi-gear"></i></button>
+
                 <div class="user-profile">
                     <div class="user-info text-end">
-                        <span class="user-name">Hillary Capinan</span>
-                        <span class="user-role">ADMINISTRADORA</span>
-                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;" onmouseover="this.style.color='#ff4d6d'" onmouseout="this.style.color='var(--text-muted)'">(sair)</a>
+                        <span class="user-name">Usuário</span>
+                        <span class="user-role">Cargo</span>
+                        <a href="#" id="lnkSair" style="font-size: 0.7rem; color: var(--text-muted); text-decoration: none; margin-top: 2px; transition: 0.3s;">(sair)</a>
                     </div>
-                    <img src="https://ui-avatars.com/api/?name=Hillary+Capinan&background=e01e86&color=fff&bold=true" alt="User">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=e01e86&color=fff&bold=true" alt="User">
                 </div>
             </div>
         </header>
 
         <main class="content-area">
-            <div class="mb-4 d-flex justify-content-between align-items-center">
+            <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-3">
                 <button onclick="abrirModalNovo()" class="btn btn-custom">
-                    <i class="bi bi-plus-lg me-2"></i> NOVO EMPRÉSTIMO
+                    <i class="bi bi-plus-lg me-2"></i> NOVA MOVIMENTAÇÃO
                 </button>
+
                 <div class="input-group" style="width: 350px;">
                     <input type="text" class="form-control" id="inputPesquisaControle" placeholder="Buscar colab. ou equip...">
                     <button class="btn btn-custom" type="button" id="btnPesquisarControle"><i class="bi bi-search"></i></button>
@@ -86,7 +94,10 @@
                     </table>
                 </div>
             </div>
-            <footer class="system-footer"><p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>.</p></footer>
+
+            <footer class="system-footer">
+                <p>&copy; 2026 Sistema de gerenciamento produzido por <span>Hillary Capinan</span>.</p>
+            </footer>
         </main>
     </div>
 
@@ -97,45 +108,55 @@
                     <h5 class="modal-title fw-bold text-white">REGISTRO DE MOVIMENTAÇÃO</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
+
                 <div class="modal-body p-4">
                     <form id="formControle">
                         <input type="hidden" id="editId">
+
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label">COLABORADOR *</label>
                                 <select class="form-select" id="id_colaborador" required></select>
                             </div>
+
                             <div class="col-md-6">
                                 <label class="form-label">EQUIPAMENTO *</label>
                                 <select class="form-select" id="id_equipamento" required></select>
                             </div>
-                            <div class="col-md-4">
-                                <label class="form-label">DATA DA SAÍDA *</label>
-                                <input type="date" class="form-control" id="data_saida" required>
-                            </div>
-                            <div class="col-md-4" id="containerDataPrevista">
-                                <label class="form-label">PREVISÃO DEVOLUÇÃO *</label>
-                                <input type="date" class="form-control" id="data_prevista">
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">QUANTIDADE *</label>
-                                <input type="number" class="form-control" id="condicao_entrega" min="1" value="1" required>
-                            </div>
+
                             <div class="col-md-12">
                                 <label class="form-label">STATUS *</label>
                                 <select class="form-select" id="status" required></select>
                             </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">DATA DA SAÍDA *</label>
+                                <input type="date" class="form-control" id="data_saida" required>
+                            </div>
+
+                            <div class="col-md-4 d-none" id="containerDataPrevista">
+                                <label class="form-label">PREVISÃO DEVOLUÇÃO *</label>
+                                <input type="date" class="form-control" id="data_prevista">
+                            </div>
+
+                            <div class="col-md-4" id="containerQuantidade">
+                                <label class="form-label">QUANTIDADE *</label>
+                                <input type="number" class="form-control" id="condicao_entrega" min="1" value="1" required>
+                            </div>
+
                             <div id="divDevolucao" class="col-12 row g-4 d-none m-0 p-0">
                                 <div class="col-md-4 mt-4">
                                     <label class="form-label">DATA DA DEVOLUÇÃO *</label>
                                     <input type="date" class="form-control" id="data_devolucao">
                                 </div>
+
                                 <div class="col-md-8 mt-4">
                                     <label class="form-label">OBSERVAÇÃO DA DEVOLUÇÃO</label>
                                     <input type="text" class="form-control" id="observacao_devolucao">
                                 </div>
                             </div>
                         </div>
+
                         <div class="text-end mt-5">
                             <button type="button" class="btn btn-outline-light me-2" data-bs-dismiss="modal">CANCELAR</button>
                             <button type="submit" class="btn btn-custom">SALVAR REGISTRO</button>
@@ -147,14 +168,17 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         const btnMenu = document.getElementById('btnMenuMobile');
         const sidebar = document.querySelector('.sidebar');
-        if(btnMenu && sidebar) {
+
+        if (btnMenu && sidebar) {
             btnMenu.addEventListener('click', (e) => {
                 sidebar.classList.toggle('aberta');
                 e.stopPropagation();
             });
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('aberta') && !sidebar.contains(e.target) && !btnMenu.contains(e.target)) {
                     sidebar.classList.remove('aberta');
@@ -162,6 +186,7 @@
             });
         }
     </script>
+
     <script src="js/controle.js"></script>
     <script src="js/auth.js"></script>
 </body>
